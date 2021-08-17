@@ -25,6 +25,8 @@ npx nx g @nrwl/react:lib util-testing
 ```sh
 npx nx run-android mobile-providers
 npx nx run-ios mobile-providers --install
+npx nx serve web-providers
+npx nx serve web-providers --prod
 ```
 
 # Todo
