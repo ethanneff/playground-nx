@@ -4,7 +4,8 @@ SIZING https://material.io/design/typography/the-type-system.html#applying-the-t
 
 import { FontEmphases, FontSizes, FontWeight } from './types';
 
-const isReactNative = navigator?.product === 'ReactNative';
+const isReactNative =
+  typeof navigator != 'undefined' && navigator?.product === 'ReactNative';
 
 export const fontWeight: { [key: string]: FontWeight } = {
   light: isReactNative ? '100' : 100,
