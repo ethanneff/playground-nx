@@ -29,7 +29,9 @@ npx nx run-ios mobile-providers --install
 
 # Todo
 
+- [ ] web components
 - [ ] redux
 - [ ] darkmode
 - [ ] navigation
 - [ ] todos example
+- [ ] publishable libs
