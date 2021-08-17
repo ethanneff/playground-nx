@@ -1,7 +1,526 @@
 {
   "version": 2,
-  "projects": {},
+  "projects": {
+    "mobile-patients": {
+      "root": "apps/mobile-patients",
+      "sourceRoot": "apps/mobile-patients/src",
+      "projectType": "application",
+      "targets": {
+        "start": {
+          "executor": "@nrwl/react-native:start",
+          "options": {
+            "port": 8081
+          }
+        },
+        "serve": {
+          "executor": "@nrwl/workspace:run-commands",
+          "options": {
+            "command": "nx start mobile-patients"
+          }
+        },
+        "run-ios": {
+          "executor": "@nrwl/react-native:run-ios",
+          "options": {}
+        },
+        "bundle-ios": {
+          "executor": "@nrwl/react-native:bundle",
+          "outputs": ["apps/mobile-patients/build"],
+          "options": {
+            "entryFile": "apps/mobile-patients/src/main.tsx",
+            "platform": "ios",
+            "bundleOutput": "dist/apps/mobile-patients/ios/main.bundle"
+          }
+        },
+        "run-android": {
+          "executor": "@nrwl/react-native:run-android",
+          "options": {}
+        },
+        "build-android": {
+          "executor": "@nrwl/react-native:build-android",
+          "outputs": [
+            "apps/mobile-patients/android/app/build/outputs/bundle",
+            "apps/mobile-patients/android/app/build/outputs/apk"
+          ],
+          "options": {}
+        },
+        "bundle-android": {
+          "executor": "@nrwl/react-native:bundle",
+          "options": {
+            "entryFile": "apps/mobile-patients/src/main.tsx",
+            "platform": "android",
+            "bundleOutput": "dist/apps/mobile-patients/android/main.bundle"
+          }
+        },
+        "sync-deps": {
+          "executor": "@nrwl/react-native:sync-deps",
+          "options": {}
+        },
+        "ensure-symlink": {
+          "executor": "@nrwl/react-native:ensure-symlink",
+          "options": {}
+        },
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["apps/mobile-patients/**/*.{ts,tsx,js,jsx}"]
+          }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": ["coverage/apps/mobile-patients"],
+          "options": {
+            "jestConfig": "apps/mobile-patients/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "mobile-patients-e2e": {
+      "root": "apps/mobile-patients-e2e",
+      "sourceRoot": "apps/mobile-patients-e2e/src",
+      "projectType": "application",
+      "targets": {
+        "build-ios": {
+          "executor": "@nrwl/detox:build",
+          "options": {
+            "detoxConfiguration": "ios.sim.debug"
+          },
+          "configurations": {
+            "production": {
+              "detoxConfiguration": "ios.sim.release"
+            }
+          }
+        },
+        "test-ios": {
+          "executor": "@nrwl/detox:test",
+          "options": {
+            "detoxConfiguration": "ios.sim.debug"
+          },
+          "configurations": {
+            "production": {
+              "detoxConfiguration": "ios.sim.release"
+            }
+          }
+        },
+        "build-android": {
+          "executor": "@nrwl/detox:build",
+          "options": {
+            "detoxConfiguration": "android.emu.debug"
+          },
+          "configurations": {
+            "production": {
+              "detoxConfiguration": "android.emu.release"
+            }
+          }
+        },
+        "test-android": {
+          "executor": "@nrwl/detox:test",
+          "options": {
+            "detoxConfiguration": "android.emu.debug"
+          },
+          "configurations": {
+            "production": {
+              "detoxConfiguration": "android.emu.release"
+            }
+          }
+        },
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "apps/mobile-patients-e2e/**/*.{ts,tsx,js,jsx}"
+            ]
+          }
+        }
+      }
+    },
+    "mobile-providers": {
+      "root": "apps/mobile-providers",
+      "sourceRoot": "apps/mobile-providers/src",
+      "projectType": "application",
+      "targets": {
+        "start": {
+          "executor": "@nrwl/react-native:start",
+          "options": {
+            "port": 8081
+          }
+        },
+        "serve": {
+          "executor": "@nrwl/workspace:run-commands",
+          "options": {
+            "command": "nx start mobile-providers"
+          }
+        },
+        "run-ios": {
+          "executor": "@nrwl/react-native:run-ios",
+          "options": {}
+        },
+        "bundle-ios": {
+          "executor": "@nrwl/react-native:bundle",
+          "outputs": ["apps/mobile-providers/build"],
+          "options": {
+            "entryFile": "apps/mobile-providers/src/main.tsx",
+            "platform": "ios",
+            "bundleOutput": "dist/apps/mobile-providers/ios/main.bundle"
+          }
+        },
+        "run-android": {
+          "executor": "@nrwl/react-native:run-android",
+          "options": {}
+        },
+        "build-android": {
+          "executor": "@nrwl/react-native:build-android",
+          "outputs": [
+            "apps/mobile-providers/android/app/build/outputs/bundle",
+            "apps/mobile-providers/android/app/build/outputs/apk"
+          ],
+          "options": {}
+        },
+        "bundle-android": {
+          "executor": "@nrwl/react-native:bundle",
+          "options": {
+            "entryFile": "apps/mobile-providers/src/main.tsx",
+            "platform": "android",
+            "bundleOutput": "dist/apps/mobile-providers/android/main.bundle"
+          }
+        },
+        "sync-deps": {
+          "executor": "@nrwl/react-native:sync-deps",
+          "options": {}
+        },
+        "ensure-symlink": {
+          "executor": "@nrwl/react-native:ensure-symlink",
+          "options": {}
+        },
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["apps/mobile-providers/**/*.{ts,tsx,js,jsx}"]
+          }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": ["coverage/apps/mobile-providers"],
+          "options": {
+            "jestConfig": "apps/mobile-providers/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "mobile-providers-e2e": {
+      "root": "apps/mobile-providers-e2e",
+      "sourceRoot": "apps/mobile-providers-e2e/src",
+      "projectType": "application",
+      "targets": {
+        "build-ios": {
+          "executor": "@nrwl/detox:build",
+          "options": {
+            "detoxConfiguration": "ios.sim.debug"
+          },
+          "configurations": {
+            "production": {
+              "detoxConfiguration": "ios.sim.release"
+            }
+          }
+        },
+        "test-ios": {
+          "executor": "@nrwl/detox:test",
+          "options": {
+            "detoxConfiguration": "ios.sim.debug"
+          },
+          "configurations": {
+            "production": {
+              "detoxConfiguration": "ios.sim.release"
+            }
+          }
+        },
+        "build-android": {
+          "executor": "@nrwl/detox:build",
+          "options": {
+            "detoxConfiguration": "android.emu.debug"
+          },
+          "configurations": {
+            "production": {
+              "detoxConfiguration": "android.emu.release"
+            }
+          }
+        },
+        "test-android": {
+          "executor": "@nrwl/detox:test",
+          "options": {
+            "detoxConfiguration": "android.emu.debug"
+          },
+          "configurations": {
+            "production": {
+              "detoxConfiguration": "android.emu.release"
+            }
+          }
+        },
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "apps/mobile-providers-e2e/**/*.{ts,tsx,js,jsx}"
+            ]
+          }
+        }
+      }
+    },
+    "ui-mobile": {
+      "root": "libs/ui-mobile",
+      "sourceRoot": "libs/ui-mobile/src",
+      "projectType": "library",
+      "targets": {
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/ui-mobile/**/*.{ts,tsx,js,jsx}"]
+          }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/ui-mobile"],
+          "options": {
+            "jestConfig": "libs/ui-mobile/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "ui-tokens": {
+      "root": "libs/ui-tokens",
+      "sourceRoot": "libs/ui-tokens/src",
+      "projectType": "library",
+      "targets": {
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/ui-tokens/**/*.{ts,tsx,js,jsx}"]
+          }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/ui-tokens"],
+          "options": {
+            "jestConfig": "libs/ui-tokens/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "ui-web": {
+      "root": "libs/ui-web",
+      "sourceRoot": "libs/ui-web/src",
+      "projectType": "library",
+      "targets": {
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/ui-web/**/*.{ts,tsx,js,jsx}"]
+          }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/ui-web"],
+          "options": {
+            "jestConfig": "libs/ui-web/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "util-testing": {
+      "root": "libs/util-testing",
+      "sourceRoot": "libs/util-testing/src",
+      "projectType": "library",
+      "targets": {
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/util-testing/**/*.{ts,tsx,js,jsx}"]
+          }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/util-testing"],
+          "options": {
+            "jestConfig": "libs/util-testing/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "web-patients": {
+      "root": "apps/web-patients",
+      "sourceRoot": "apps/web-patients",
+      "projectType": "application",
+      "targets": {
+        "build": {
+          "executor": "@nrwl/next:build",
+          "outputs": ["{options.outputPath}"],
+          "options": {
+            "root": "apps/web-patients",
+            "outputPath": "dist/apps/web-patients"
+          },
+          "configurations": {
+            "production": {}
+          }
+        },
+        "serve": {
+          "executor": "@nrwl/next:server",
+          "options": {
+            "buildTarget": "web-patients:build",
+            "dev": true
+          },
+          "configurations": {
+            "production": {
+              "buildTarget": "web-patients:build:production",
+              "dev": false
+            }
+          }
+        },
+        "export": {
+          "executor": "@nrwl/next:export",
+          "options": {
+            "buildTarget": "web-patients:build:production"
+          }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": ["coverage/apps/web-patients"],
+          "options": {
+            "jestConfig": "apps/web-patients/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["apps/web-patients/**/*.{ts,tsx,js,jsx}"]
+          }
+        }
+      }
+    },
+    "web-patients-e2e": {
+      "root": "apps/web-patients-e2e",
+      "sourceRoot": "apps/web-patients-e2e/src",
+      "projectType": "application",
+      "targets": {
+        "e2e": {
+          "executor": "@nrwl/cypress:cypress",
+          "options": {
+            "cypressConfig": "apps/web-patients-e2e/cypress.json",
+            "tsConfig": "apps/web-patients-e2e/tsconfig.e2e.json",
+            "devServerTarget": "web-patients:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "web-patients:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["apps/web-patients-e2e/**/*.{js,ts}"]
+          }
+        }
+      }
+    },
+    "web-providers": {
+      "root": "apps/web-providers",
+      "sourceRoot": "apps/web-providers",
+      "projectType": "application",
+      "targets": {
+        "build": {
+          "executor": "@nrwl/next:build",
+          "outputs": ["{options.outputPath}"],
+          "options": {
+            "root": "apps/web-providers",
+            "outputPath": "dist/apps/web-providers"
+          },
+          "configurations": {
+            "production": {}
+          }
+        },
+        "serve": {
+          "executor": "@nrwl/next:server",
+          "options": {
+            "buildTarget": "web-providers:build",
+            "dev": true
+          },
+          "configurations": {
+            "production": {
+              "buildTarget": "web-providers:build:production",
+              "dev": false
+            }
+          }
+        },
+        "export": {
+          "executor": "@nrwl/next:export",
+          "options": {
+            "buildTarget": "web-providers:build:production"
+          }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": ["coverage/apps/web-providers"],
+          "options": {
+            "jestConfig": "apps/web-providers/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["apps/web-providers/**/*.{ts,tsx,js,jsx}"]
+          }
+        }
+      }
+    },
+    "web-providers-e2e": {
+      "root": "apps/web-providers-e2e",
+      "sourceRoot": "apps/web-providers-e2e/src",
+      "projectType": "application",
+      "targets": {
+        "e2e": {
+          "executor": "@nrwl/cypress:cypress",
+          "options": {
+            "cypressConfig": "apps/web-providers-e2e/cypress.json",
+            "tsConfig": "apps/web-providers-e2e/tsconfig.e2e.json",
+            "devServerTarget": "web-providers:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "web-providers:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["apps/web-providers-e2e/**/*.{js,ts}"]
+          }
+        }
+      }
+    }
+  },
   "cli": {
-    "defaultCollection": "@nrwl/workspace"
+    "defaultCollection": "@nrwl/react-native"
+  },
+  "defaultProject": "mobile-providers",
+  "generators": {
+    "@nrwl/react": {
+      "application": {
+        "babel": true
+      }
+    },
+    "@nrwl/next": {
+      "application": {
+        "style": "styled-components",
+        "linter": "eslint"
+      }
+    }
   }
 }

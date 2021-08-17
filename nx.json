@@ -14,12 +14,7 @@
     "default": {
       "runner": "@nrwl/workspace/tasks-runners/default",
       "options": {
-        "cacheableOperations": [
-          "build",
-          "lint",
-          "test",
-          "e2e"
-        ]
+        "cacheableOperations": ["build", "lint", "test", "e2e"]
       }
     }
   },
@@ -31,5 +26,46 @@
       }
     ]
   },
-  "projects": {}
+  "projects": {
+    "mobile-patients": {
+      "tags": []
+    },
+    "mobile-patients-e2e": {
+      "tags": [],
+      "implicitDependencies": ["mobile-patients"]
+    },
+    "mobile-providers": {
+      "tags": []
+    },
+    "mobile-providers-e2e": {
+      "tags": [],
+      "implicitDependencies": ["mobile-providers"]
+    },
+    "ui-mobile": {
+      "tags": []
+    },
+    "ui-tokens": {
+      "tags": []
+    },
+    "ui-web": {
+      "tags": []
+    },
+    "util-testing": {
+      "tags": []
+    },
+    "web-patients": {
+      "tags": []
+    },
+    "web-patients-e2e": {
+      "tags": [],
+      "implicitDependencies": ["web-patients"]
+    },
+    "web-providers": {
+      "tags": []
+    },
+    "web-providers-e2e": {
+      "tags": [],
+      "implicitDependencies": ["web-providers"]
+    }
+  }
 }
