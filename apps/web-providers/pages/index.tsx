@@ -10,7 +10,7 @@ export function Index() {
   return (
     <StyledPage>
       <Card>
-        <Text title="hello world" emphasis="none" type="h2" color="positive" />
+        <Text title="hello world" emphasis="none" type="h1" color="positive" />
         <Button
           title="none"
           color="accent"

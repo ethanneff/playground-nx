@@ -1,4 +1,3 @@
-import { ReactNode } from 'react';
 import { lightTheme, MonoMultiColor, padding } from '@nx/ui-tokens';
 
 type Props = {
@@ -22,7 +21,7 @@ export const Button = ({
       onClick={onClick}
       type="button"
       style={{
-        padding: `${padding(2)}px ${padding(6)}px`,
+        padding: `${padding(2)} ${padding(6)}`,
         borderRadius: padding(4),
         borderStyle: 'solid',
         border: `1px solid ${lightTheme.border[color]}`,

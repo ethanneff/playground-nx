@@ -1,5 +1,3 @@
-import React from 'react';
-import { Text as Original } from 'react-native';
 import {
   FontEmphasis,
   MonoMultiColor,

@@ -1,4 +1,7 @@
-export const padding = (value: number): number => value * 4;
+export const isReactNative =
+  typeof navigator != 'undefined' && navigator?.product === 'ReactNative';
+
+export const padding = (value: number): number | string => getPx(value * 4);
 
 export const colorWithOpacity = (colorCode: string, opacity = 0.5): string => {
   const boundedOpacity = opacity < 0 ? 0 : opacity > 1 ? 1 : opacity;
@@ -7,3 +10,6 @@ export const colorWithOpacity = (colorCode: string, opacity = 0.5): string => {
   const substr = colorCode.substring(leading, colorCode.length - 1);
   return `hsla(${substr}, ${boundedOpacity})`;
 };
+
+export const getPx = (value: number): number | string =>
+  isReactNative ? value : `${value}px`;

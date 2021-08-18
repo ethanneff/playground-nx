@@ -154,7 +154,7 @@ export type FontType =
   | 'overline';
 
 export type FontSize = {
-  fontSize: number;
+  fontSize: number | string;
   fontWeight: FontWeight;
   letterSpacing: number;
 };

@@ -31,9 +31,12 @@ npx nx serve web-providers --prod
 
 # Todo
 
-- [ ] web components
+- [x] web components
+- [ ] fix ios
+- [ ] token px
 - [ ] redux
 - [ ] darkmode
 - [ ] navigation
 - [ ] todos example
 - [ ] publishable libs
+- [ ] tsc and next lint
