@@ -43,6 +43,27 @@
         }
       }
     },
+    "feature-sentry": {
+      "root": "libs/feature-sentry",
+      "sourceRoot": "libs/feature-sentry/src",
+      "projectType": "library",
+      "targets": {
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/feature-sentry/**/*.{ts,tsx,js,jsx}"]
+          }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/feature-sentry"],
+          "options": {
+            "jestConfig": "libs/feature-sentry/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
     "mobile-patients": {
       "root": "apps/mobile-patients",
       "sourceRoot": "apps/mobile-patients/src",

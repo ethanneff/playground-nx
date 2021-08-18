@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { Card, Button, Text } from '@nx/ui-web';
+import { Sentry } from '@nx/feature-sentry';
 
 const StyledPage = styled.div`
   .page {
@@ -7,6 +8,7 @@ const StyledPage = styled.div`
 `;
 
 export function Index() {
+  Sentry();
   return (
     <StyledPage>
       <Card>

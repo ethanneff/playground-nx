@@ -33,6 +33,9 @@
     "feature-biometrics": {
       "tags": []
     },
+    "feature-sentry": {
+      "tags": []
+    },
     "mobile-patients": {
       "tags": []
     },

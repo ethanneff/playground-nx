@@ -1,1 +1,1 @@
-export * from './lib/data-access';
+export const User = () => undefined;
