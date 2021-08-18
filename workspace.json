@@ -1,6 +1,48 @@
 {
   "version": 2,
   "projects": {
+    "data-access": {
+      "root": "libs/data-access",
+      "sourceRoot": "libs/data-access/src",
+      "projectType": "library",
+      "targets": {
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/data-access/**/*.{ts,tsx,js,jsx}"]
+          }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/data-access"],
+          "options": {
+            "jestConfig": "libs/data-access/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "feature-biometrics": {
+      "root": "libs/feature-biometrics",
+      "sourceRoot": "libs/feature-biometrics/src",
+      "projectType": "library",
+      "targets": {
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/feature-biometrics/**/*.{ts,tsx,js,jsx}"]
+          }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/feature-biometrics"],
+          "options": {
+            "jestConfig": "libs/feature-biometrics/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
     "mobile-patients": {
       "root": "apps/mobile-patients",
       "sourceRoot": "apps/mobile-patients/src",

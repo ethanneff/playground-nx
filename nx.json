@@ -27,6 +27,12 @@
     ]
   },
   "projects": {
+    "data-access": {
+      "tags": []
+    },
+    "feature-biometrics": {
+      "tags": []
+    },
     "mobile-patients": {
       "tags": []
     },

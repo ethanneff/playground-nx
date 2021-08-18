@@ -1,8 +1,7 @@
 module.exports = {
-  displayName: 'mobile-providers',
+  displayName: 'feature-biometrics',
   preset: 'react-native',
   moduleFileExtensions: ['ts', 'js', 'html', 'tsx', 'jsx'],
-  resolver: '@nrwl/jest/plugins/resolver',
   setupFilesAfterEnv: ['<rootDir>/test-setup.ts'],
   transform: {
     '\\.(js|ts|tsx)$': require.resolve('react-native/jest/preprocessor.js'),

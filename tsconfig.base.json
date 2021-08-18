@@ -35,6 +35,8 @@
     "incremental": true,
     "baseUrl": ".",
     "paths": {
+      "@nx/data-access": ["libs/data-access/src/index.ts"],
+      "@nx/feature-biometrics": ["libs/feature-biometrics/src/index.ts"],
       "@nx/ui-mobile": ["libs/ui-mobile/src/index.ts"],
       "@nx/ui-tokens": ["libs/ui-tokens/src/index.ts"],
       "@nx/ui-web": ["libs/ui-web/src/index.ts"],
