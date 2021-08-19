@@ -1,7 +1,8 @@
 import React from 'react';
 import { SafeAreaView, ScrollView, StatusBar } from 'react-native';
 import { Card, Text, Button } from '@nx/ui-mobile';
-
+import { Sentry } from '@nx/feature-sentry';
+import { Biometrics } from '@nx/feature-biometrics';
 import { QueryClient, QueryClientProvider } from 'react-query';
 
 const Component = () => {
@@ -33,6 +34,8 @@ const Component = () => {
 const queryClient = new QueryClient();
 
 const App = () => {
+  Sentry();
+  Biometrics();
   return (
     <QueryClientProvider client={queryClient}>
       <Component />

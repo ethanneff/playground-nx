@@ -18,8 +18,12 @@ import {
 // @ts-ignore
 import openURLInBrowser from 'react-native/Libraries/Core/Devtools/openURLInBrowser';
 import { Text as T } from '@nx/ui-mobile';
+import { Sentry } from '@nx/feature-sentry';
+import { Biometrics } from '@nx/feature-biometrics';
 
 const App = () => {
+  Sentry();
+  Biometrics();
   return (
     <>
       <StatusBar barStyle="dark-content" />

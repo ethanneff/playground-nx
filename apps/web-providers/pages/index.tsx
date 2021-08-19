@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import { Card, Button, Text } from '@nx/ui-web';
 import { QueryClient, QueryClientProvider } from 'react-query';
+import { Sentry } from '@nx/feature-sentry';
 
 const StyledPage = styled.div`
   .page {
@@ -26,6 +27,7 @@ const Component = () => {
 const queryClient = new QueryClient();
 
 const App = () => {
+  Sentry();
   return (
     <QueryClientProvider client={queryClient}>
       <Component />
