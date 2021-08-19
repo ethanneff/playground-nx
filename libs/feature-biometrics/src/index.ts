@@ -1,1 +1,3 @@
-export const Biometrics = () => undefined;
+export const Biometrics = () => ({
+  start: () => undefined,
+});
