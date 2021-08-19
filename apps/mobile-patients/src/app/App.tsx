@@ -17,17 +17,9 @@ import {
 } from 'react-native/Libraries/NewAppScreen';
 // @ts-ignore
 import openURLInBrowser from 'react-native/Libraries/Core/Devtools/openURLInBrowser';
-
 import { Text as T } from '@nx/ui-mobile';
-import { Biometrics } from '@nx/feature-biometrics';
-import { Sentry } from '@nx/feature-sentry';
-import { User } from '@nx/data-access';
 
 const App = () => {
-  Biometrics();
-  Sentry();
-  User();
-
   return (
     <>
       <StatusBar barStyle="dark-content" />

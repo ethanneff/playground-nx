@@ -7,6 +7,7 @@
     "react": "*",
     "@testing-library/react-native": "*",
     "@testing-library/jest-native": "*",
-    "@testing-library/react": "*"
+    "@testing-library/react": "*",
+    "react-query": "*"
   }
 }

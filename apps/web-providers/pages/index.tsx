@@ -1,14 +1,13 @@
 import styled from 'styled-components';
 import { Card, Button, Text } from '@nx/ui-web';
-import { Sentry } from '@nx/feature-sentry';
+import { QueryClient, QueryClientProvider } from 'react-query';
 
 const StyledPage = styled.div`
   .page {
   }
 `;
 
-export function Index() {
-  Sentry();
+const Component = () => {
   return (
     <StyledPage>
       <Card>
@@ -22,6 +21,16 @@ export function Index() {
       </Card>
     </StyledPage>
   );
-}
+};
 
-export default Index;
+const queryClient = new QueryClient();
+
+const App = () => {
+  return (
+    <QueryClientProvider client={queryClient}>
+      <Component />
+    </QueryClientProvider>
+  );
+};
+
+export default App;
