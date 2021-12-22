@@ -2,6 +2,41 @@
 
 This project was generated using [Nx](https://nx.dev).
 
+# Directory Structure 
+
+```sh
+.
+├── README.md
+├── apps # individual frontend apps
+│   ├── mobile-patients # react-native
+│   ├── mobile-patients-e2e
+│   ├── mobile-providers # react-native
+│   ├── mobile-providers-e2e
+│   ├── web-patients # nextjs
+│   ├── web-patients-e2e 
+│   ├── web-providers # nextjs
+│   └── web-providers-e2e
+├── babel.config.json
+├── jest.config.js
+├── jest.preset.js
+├── libs # shared code between apps
+│   ├── data-access # business logic
+│   ├── feature-biometrics # feature
+│   ├── feature-sentry # feature
+│   ├── ui-mobile # ui
+│   ├── ui-tokens # ui
+│   ├── ui-web # ui 
+│   └── util-testing # testing
+├── nx.json
+├── package-lock.json
+├── package.json
+├── tools
+│   ├── generators
+│   └── tsconfig.tools.json
+├── tsconfig.base.json
+└── workspace.json
+```
+
 # Install
 
 ```sh
